@@ -6,8 +6,8 @@
         <div class="account-wall">
           <img class="profile-img" src="images/login.png" />
           <form @submit.prevent="handleSubmit">
-            <input class="form-control" v-model="email" type="text" name="email" placeholder="Email" required="required" autofocus="autofocus" />
-            <input class="form-control" v-model="password" type="password" name="password" placeholder="Password" required="required" />
+            <input class="form-control" v-model.trim="email" type="text" name="email" placeholder="Email" required="required" autofocus="autofocus" />
+            <input class="form-control" v-model.trim="password" type="password" name="password" placeholder="Password" required="required" />
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
             <span class="clearfix"></span>
           </form>
@@ -43,10 +43,6 @@
             .then(user => {
                 this.$store.commit('auth/loginSuccess', user);
                 this.$router.push(nextUrl || '/');
-                // setTimeout(() => this.$router.push(nextUrl || '/'), 100)
-                /*this.$nextTick(() => {
-                  this.$router.push(nextUrl || '/');
-                });*/
               },
               error => {
                 this.$store.commit('alert/error', error);

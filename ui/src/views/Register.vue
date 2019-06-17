@@ -7,8 +7,8 @@
             <em v-if="loading">Creating user...</em>
             <span v-if="error" class="text-danger">{{error}}</span>
             <form @submit.prevent="handleSubmit">
-              <input class="form-control" v-model="email" type="email" name="email" placeholder="Email" required="required" />
-              <input class="form-control nomargin" v-model="password" type="password" name="password" placeholder="Password" required="required" />
+              <input class="form-control" v-model.trim="email" type="email" name="email" placeholder="Email" required="required" />
+              <input class="form-control nomargin" v-model.trim="password" type="password" name="password" placeholder="Password" required="required" />
               <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
               <span class="clearfix"></span>
             </form>

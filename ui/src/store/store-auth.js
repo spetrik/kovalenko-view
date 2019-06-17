@@ -5,11 +5,7 @@ export const storeAuth = {
   },
   getters: {
     loggedIn (state) {
-      // return !!localStorage.getItem('user')
       return !!state.user;
-    },
-    userXX (state) {
-      return JSON.parse(localStorage.getItem('user'));
     }
   },
   mutations: {
